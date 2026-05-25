@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — QLC Que Le Compramos</title>
+  <meta name="description" content="Política de privacidad de Que Le Compramos (QLC). Cómo recopilamos, usamos y protegemos tus datos." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">
+        <span class="logo-qlc">QLC</span>
+        <span class="logo-full">Que Le Compramos</span>
+      </a>
+      <nav class="header-nav">
+        <a href="/#como-funciona">Cómo funciona</a>
+        <a href="/#privacidad">Privacidad</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="section-label">Documentos legales</div>
+        <h1>Política de Privacidad</h1>
+        <p>Última actualización: mayo de 2026</p>
+      </div>
+    </section>
+
+    <section class="page-content">
+      <div class="container">
+        <div class="prose">
+
+          <h2>1. Quiénes somos</h2>
+          <p>
+            Que Le Compramos (QLC) es un servicio de coordinación de regalos que opera a través de WhatsApp. El responsable del tratamiento de los datos es el equipo de QLC, contactable en <a href="mailto:hola@quelecompramos.com">hola@quelecompramos.com</a>.
+          </p>
+
+          <h2>2. Qué datos recopilamos</h2>
+          <p>Para que el servicio funcione, recopilamos únicamente los datos que vos nos proporcionás directamente a través de WhatsApp:</p>
+          <ul>
+            <li><strong>Número de teléfono de WhatsApp</strong> — necesario para identificarte como usuario del servicio.</li>
+            <li><strong>Nombres y apellidos</strong> — de las personas para las que se registran ideas de regalo.</li>
+            <li><strong>Identificadores opcionales</strong> — dirección de email, número de teléfono adicional y/o fecha de nacimiento de las personas registradas. Estos datos son opcionales pero al menos uno es necesario para identificar a una persona de forma única.</li>
+            <li><strong>Ideas de regalo</strong> — el texto de los regalos que anotás a través del agente.</li>
+          </ul>
+          <p>No recopilamos datos de navegación, cookies, ni ningún otro dato que no sea explícitamente compartido por vos a través de la conversación de WhatsApp.</p>
+
+          <h2>3. Para qué usamos tus datos</h2>
+          <p>Usamos los datos exclusivamente para:</p>
+          <ul>
+            <li>Identificar personas dentro de tu grupo y asociarles ideas de regalo.</li>
+            <li>Resolver ambigüedades cuando dos personas tienen el mismo nombre.</li>
+            <li>Proteger la sorpresa: verificar que el destinatario de un regalo no esté consultando su propia lista.</li>
+            <li>Gestionar la eliminación de datos a pedido del usuario.</li>
+          </ul>
+          <p><strong>No usamos tus datos para publicidad, perfilado comercial, ni los compartimos con terceros bajo ninguna circunstancia.</strong></p>
+
+          <h2>4. Cómo protegemos tus datos</h2>
+          <p>La privacidad está integrada en el diseño del servicio desde el primer día:</p>
+          <ul>
+            <li><strong>Cifrado en reposo:</strong> los identificadores sensibles (email, teléfono, fecha de nacimiento) se almacenan cifrados con AES-256 mediante la librería Fernet.</li>
+            <li><strong>Hash para comparación:</strong> cuando necesitamos verificar si un dato coincide con el almacenado, usamos HMAC-SHA256. Nunca desciframos el dato original para compararlo.</li>
+            <li><strong>Los identificadores nunca se muestran:</strong> el email, teléfono y fecha de nacimiento funcionan únicamente como claves de identificación internas. Nunca aparecen en ninguna respuesta del agente.</li>
+            <li><strong>Aislamiento por grupo:</strong> los datos de cada grupo son accesibles únicamente para los miembros de ese grupo.</li>
+          </ul>
+
+          <h2>5. Con quién compartimos tus datos</h2>
+          <p>Para operar el servicio, utilizamos los siguientes proveedores tecnológicos que pueden procesar datos en nombre de QLC:</p>
+          <ul>
+            <li><strong>Twilio</strong> — proveedor de la API de WhatsApp Business. Los mensajes pasan por su infraestructura.</li>
+            <li><strong>Supabase</strong> — base de datos PostgreSQL donde se almacenan los datos cifrados.</li>
+            <li><strong>Railway</strong> — plataforma de hosting del servidor de la aplicación.</li>
+            <li><strong>Anthropic</strong> — API de inteligencia artificial usada para detectar la intención de los mensajes (no se almacena el contenido de los mensajes en sus sistemas).</li>
+          </ul>
+          <p>No vendemos, alquilamos ni compartimos tus datos con ningún tercero para fines comerciales o publicitarios.</p>
+
+          <h2>6. Tus derechos</h2>
+          <p>Tenés derecho a:</p>
+          <ul>
+            <li><strong>Acceder</strong> a los datos que tenemos sobre vos o las personas que registraste.</li>
+            <li><strong>Eliminar</strong> cualquier persona registrada y todos sus datos asociados, en cualquier momento, enviando el mensaje "Eliminar [nombre]" al agente.</li>
+            <li><strong>Darte de baja</strong> del servicio enviando "darme de baja" o "opt out" al agente. Podés elegir conservar tus datos o eliminarlos completamente.</li>
+            <li><strong>Solicitar información</strong> sobre cualquier aspecto del tratamiento de tus datos escribiéndonos a <a href="mailto:hola@quelecompramos.com">hola@quelecompramos.com</a>.</li>
+          </ul>
+
+          <h2>7. Retención de datos</h2>
+          <p>
+            Conservamos los datos mientras el usuario utilice activamente el servicio. Los datos de personas eliminadas se borran de forma permanente e irreversible. Los datos de usuarios que eligen la opción "eliminar todo" al darse de baja también se borran permanentemente.
+          </p>
+
+          <h2>8. Menores de edad</h2>
+          <p>
+            QLC no está dirigido a menores de 13 años. No recopilamos intencionalmente datos de menores. Si tomás conocimiento de que un menor nos ha proporcionado datos personales, por favor contactanos para proceder a su eliminación.
+          </p>
+
+          <h2>9. Cambios a esta política</h2>
+          <p>
+            Podemos actualizar esta política ocasionalmente. La fecha de "última actualización" al inicio del documento indica cuándo fue revisada por última vez. Para cambios significativos, notificaremos a los usuarios activos a través del propio agente de WhatsApp.
+          </p>
+
+          <h2>10. Contacto</h2>
+          <p>
+            Para cualquier consulta sobre privacidad, podés escribirnos a <a href="mailto:hola@quelecompramos.com">hola@quelecompramos.com</a> o usar el <a href="contacto.html">formulario de contacto</a>.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="logo-qlc">QLC</span>
+        <span class="footer-tagline">Que Le Compramos</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="privacidad.html">Política de privacidad</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <p class="footer-copy">© 2026 Que Le Compramos · hola@quelecompramos.com</p>
+    </div>
+  </footer>
+
+</body>
+</html>

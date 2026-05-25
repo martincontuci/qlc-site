@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — QLC Que Le Compramos</title>
+  <meta name="description" content="Contactá al equipo de Que Le Compramos (QLC). Preguntas, soporte o consultas de privacidad." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">
+        <span class="logo-qlc">QLC</span>
+        <span class="logo-full">Que Le Compramos</span>
+      </a>
+      <nav class="header-nav">
+        <a href="/#como-funciona">Cómo funciona</a>
+        <a href="/#privacidad">Privacidad</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="section-label">Estamos para ayudarte</div>
+        <h1>Contacto</h1>
+        <p>Preguntas, sugerencias o consultas sobre privacidad — respondemos a la brevedad.</p>
+      </div>
+    </section>
+
+    <section class="page-content">
+      <div class="container">
+
+        <div class="contact-layout">
+
+          <div class="contact-form-wrapper">
+            <div class="contact-form" id="contact-form">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email <span style="color: var(--warm-red);">*</span></label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" autocomplete="email" required />
+                <p class="form-note">Te respondemos a esta dirección.</p>
+              </div>
+
+              <div class="form-group">
+                <label for="motivo">Motivo</label>
+                <select id="motivo" name="motivo">
+                  <option value="">Seleccioná un motivo</option>
+                  <option value="soporte">Soporte / problema técnico</option>
+                  <option value="privacidad">Consulta de privacidad / eliminación de datos</option>
+                  <option value="sugerencia">Sugerencia o feedback</option>
+                  <option value="prensa">Prensa / medios</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="mensaje">Mensaje <span style="color: var(--warm-red);">*</span></label>
+                <textarea id="mensaje" name="mensaje" placeholder="Contanos en qué te podemos ayudar..." required></textarea>
+              </div>
+
+              <button type="button" class="btn btn-primary" onclick="handleSubmit()" style="width:100%; justify-content:center;">
+                Enviar mensaje
+              </button>
+
+              <div class="form-success" id="form-success">
+                ✅ ¡Mensaje enviado! Te respondemos en menos de 48 horas.
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">✉️</div>
+              <div>
+                <strong>Email directo</strong>
+                <p><a href="mailto:hola@quelecompramos.com">hola@quelecompramos.com</a></p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">⏱️</div>
+              <div>
+                <strong>Tiempo de respuesta</strong>
+                <p>Respondemos dentro de las 48 horas hábiles.</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">🔒</div>
+              <div>
+                <strong>Eliminación de datos</strong>
+                <p>Para solicitar la eliminación de tus datos podés escribirnos aquí o enviar "darme de baja" directamente al agente por WhatsApp.</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">📋</div>
+              <div>
+                <strong>Política de privacidad</strong>
+                <p><a href="privacidad.html">Leé nuestra política completa →</a></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="logo-qlc">QLC</span>
+        <span class="footer-tagline">Que Le Compramos</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="privacidad.html">Política de privacidad</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <p class="footer-copy">© 2026 Que Le Compramos · hola@quelecompramos.com</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit() {
+      const email = document.getElementById('email').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+
+      if (!email || !mensaje) {
+        alert('Por favor completá el email y el mensaje antes de enviar.');
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Por favor ingresá un email válido.');
+        return;
+      }
+
+      // Build mailto link as fallback (replace with backend/Formspree in production)
+      const nombre  = document.getElementById('nombre').value.trim();
+      const motivo  = document.getElementById('motivo').value;
+      const subject = encodeURIComponent('Consulta QLC' + (motivo ? ' — ' + motivo : ''));
+      const body    = encodeURIComponent(
+        (nombre ? 'Nombre: ' + nombre + '\n' : '') +
+        'Email: ' + email + '\n' +
+        (motivo ? 'Motivo: ' + motivo + '\n' : '') +
+        '\n' + mensaje
+      );
+
+      window.location.href = 'mailto:hola@quelecompramos.com?subject=' + subject + '&body=' + body;
+
+      document.getElementById('form-success').style.display = 'block';
+    }
+  </script>
+
+  <style>
+    .contact-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @media (min-width: 600px) {
+      .contact-layout {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2.5rem;
+      }
+      .contact-form-wrapper { flex: 1.2; }
+      .contact-info { flex: 1; }
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-info-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .contact-info-icon {
+      font-size: 1.35rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .contact-info-item strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-info-item p {
+      font-size: 0.85rem;
+      color: var(--ink-mid);
+      line-height: 1.6;
+    }
+  </style>
+
+</body>
+</html>
