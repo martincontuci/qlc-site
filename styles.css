@@ -200,9 +200,50 @@ a:hover { text-decoration: underline; }
   font-size: 0.875rem;
   color: var(--ink-mid);
   font-weight: 400;
+  white-space: nowrap;
 }
 
 .header-nav a:hover { color: var(--green); text-decoration: none; }
+
+.header-nav a.header-whatsapp {
+  color: white;
+}
+
+/* Opt-in disclosure below CTAs */
+.opt-in-note {
+  font-size: 0.72rem;
+  color: var(--ink-light);
+  margin-top: 0.6rem;
+  max-width: 36ch;
+  line-height: 1.5;
+}
+
+.header-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--wa-green);
+  color: white !important;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.header-whatsapp:hover {
+  background-color: var(--wa-green-dark);
+  text-decoration: none;
+}
+
+.wa-label {
+  display: none;
+}
+
+@media (min-width: 520px) {
+  .wa-label { display: inline; }
+  .header-whatsapp { padding: 0.4rem 0.9rem; }
+}
 
 /* =============================================
    HERO
