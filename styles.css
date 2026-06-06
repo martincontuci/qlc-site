@@ -456,6 +456,7 @@ a:hover { text-decoration: underline; }
   color: var(--white);
   border-bottom-right-radius: 4px;
   align-self: flex-end;
+  min-width: 60%;
 }
 
 .chat-bubble.incoming {
