@@ -435,27 +435,27 @@ a:hover { text-decoration: underline; }
   margin-bottom: 1rem;
 }
 
-/* Chat bubbles */
+/* Chat bubbles — flex column, outgoing right-aligned */
+.chat-bubbles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
 .chat-bubble {
-  display: inline-block;
   max-width: 88%;
   padding: 0.6rem 0.9rem;
   border-radius: var(--radius-md);
   font-size: 0.85rem;
   line-height: 1.5;
-  margin-bottom: 0.4rem;
-  clear: both;
 }
 
 .chat-bubble.outgoing {
   background: var(--green);
   color: var(--white);
   border-bottom-right-radius: 4px;
-  float: right;
-  clear: both;
-  margin-right: 0;
-  margin-left: auto;
-  display: block;
+  align-self: flex-end;
 }
 
 .chat-bubble.incoming {
@@ -463,16 +463,13 @@ a:hover { text-decoration: underline; }
   color: var(--ink);
   border: 1px solid var(--cream-dark);
   border-bottom-left-radius: 4px;
-  float: left;
-  clear: both;
+  align-self: flex-start;
 }
 
 .chat-bubble.incoming em {
   font-style: italic;
   color: var(--ink-mid);
 }
-
-.step-content::after { content: ''; display: table; clear: both; }
 
 .cta-inline {
   margin-top: 2.5rem;
