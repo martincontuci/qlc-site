@@ -440,7 +440,9 @@ a:hover { text-decoration: underline; }
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  width: 100%;
+  width: 72%;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .chat-bubble {
@@ -456,7 +458,7 @@ a:hover { text-decoration: underline; }
   color: var(--white);
   border-bottom-right-radius: 4px;
   align-self: flex-end;
-  min-width: 60%;
+  width: 100%;
 }
 
 .chat-bubble.incoming {
