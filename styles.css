@@ -453,6 +453,9 @@ a:hover { text-decoration: underline; }
   border-bottom-right-radius: 4px;
   float: right;
   clear: both;
+  margin-right: 0;
+  margin-left: auto;
+  display: block;
 }
 
 .chat-bubble.incoming {
@@ -614,6 +617,13 @@ a:hover { text-decoration: underline; }
   color: var(--green);
   margin-bottom: 1.25rem;
   font-weight: 500;
+}
+
+.pricing-annual-spacer {
+  font-size: 0.8rem;
+  margin-bottom: 1.25rem;
+  visibility: hidden;
+  user-select: none;
 }
 
 .pricing-features {
@@ -872,4 +882,11 @@ a:hover { text-decoration: underline; }
   .hero { padding: 5rem 0 6rem; }
   .what-is, .how-it-works, .privacy, .pricing { padding: 5rem 0; }
   .footer-inner { flex-direction: row; justify-content: space-between; text-align: left; }
+}
+
+/* vCard bubble — no text padding, SVG fills the bubble */
+.chat-bubble.vcard-bubble {
+  padding: 0;
+  overflow: hidden;
+  line-height: 0;
 }
