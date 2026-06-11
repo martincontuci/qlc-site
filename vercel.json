@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/admin",
+      "destination": "https://api.quelecompramos.com/admin"
+    }
+  ]
+}
