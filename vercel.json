@@ -4,5 +4,19 @@
       "source": "/admin",
       "destination": "https://api.quelecompramos.com/admin"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "quelecompramos.com.ar" }],
+      "destination": "https://quelecompramos.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.quelecompramos.com.ar" }],
+      "destination": "https://quelecompramos.com/:path*",
+      "permanent": true
+    }
   ]
 }
