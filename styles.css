@@ -722,12 +722,15 @@ a:hover { text-decoration: underline; }
 
 .footer-nav {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.5rem;
 }
 
 .footer-nav a {
   font-size: 0.8rem;
   color: rgba(255,255,255,0.55);
+  white-space: nowrap;
 }
 
 .footer-nav a:hover { color: var(--white); }

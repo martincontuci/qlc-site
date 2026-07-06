@@ -75,7 +75,7 @@
           <h2>4. Cómo protegemos tus datos</h2>
           <p>La privacidad está integrada en el diseño del servicio desde el primer día:</p>
           <ul>
-            <li><strong>Cifrado en reposo:</strong> los identificadores sensibles (email, teléfono, fecha de nacimiento) se almacenan cifrados con AES-256 mediante la librería Fernet.</li>
+            <li><strong>Cifrado en reposo:</strong> los identificadores sensibles (email, teléfono, fecha de nacimiento) se almacenan cifrados con AES-256 mediante <a href="https://cryptography.io/en/latest/fernet/" target="_blank" rel="noopener">esta librería</a>.</li>
             <li><strong>Hash para comparación:</strong> cuando necesitamos verificar si un dato coincide con el almacenado, usamos HMAC-SHA256. Nunca desciframos el dato original para compararlo.</li>
             <li><strong>Los identificadores nunca se muestran:</strong> el email, teléfono y fecha de nacimiento funcionan únicamente como claves de identificación internas. Nunca aparecen en ninguna respuesta del agente.</li>
             <li><strong>Aislamiento por grupo:</strong> los datos de cada grupo son accesibles únicamente para los miembros de ese grupo.</li>
